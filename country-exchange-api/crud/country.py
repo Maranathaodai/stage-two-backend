@@ -13,7 +13,7 @@ async def upsert_countries(session, countries_data, rates, global_timestamp):
         currency_code = currencies[0]["code"] if currencies else None
         # Look up exchange rate if currency exists in rates dict
         exchange_rate = rates.get(currency_code) if currency_code else None
-        # Calculate estimated GDP: population * random multiplier / exchange_rate
+        # This is to Calculate estimated GDP: population * random multiplier / exchange_rate
         estimated_gdp = None
         if exchange_rate and exchange_rate > 0:
             multiplier = random.uniform(1000, 2000)  # Random range for estimation
